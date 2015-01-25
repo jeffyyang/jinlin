@@ -19,7 +19,12 @@ package com.jlinfo.admin.user;
  * @author lishen
  */
 public interface UserService {
+	
     User getUser(Long id);
 
     Long registerUser(User user);
+
+    Long loginUser(User user);    
+ 
+    Long logoutUser(User user);        
 }

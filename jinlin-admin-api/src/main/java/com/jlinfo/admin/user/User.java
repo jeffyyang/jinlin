@@ -22,19 +22,34 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
- * @author lishen
+ * @author jeffyyang
  */
 @XmlRootElement
 public class User implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8463894109605838093L;
 
+	@JsonProperty("userid")
     private Long id;
 
     @JsonProperty("username")
     private String name;
+    
+    @JsonProperty("email")
+    private String email;
 
-    public User() {
-    }
-
+    @JsonProperty("sex")
+    private int sex;
+    
+    @JsonProperty("mobile")
+    private String mobile;
+    
+    @JsonProperty("avatar")
+    private String avatar;
+    
     public User(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -48,7 +63,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
-//    @XmlElement(name = "username")
+//  @XmlElement(name = "username")
     public String getName() {
         return name;
     }
@@ -57,7 +72,40 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    @Override
+    
+    public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getSex() {
+		return sex;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	@Override
     public String toString() {
         return "User (" +
                 "id=" + id +
