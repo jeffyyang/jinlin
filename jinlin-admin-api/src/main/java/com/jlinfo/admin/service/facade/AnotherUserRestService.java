@@ -1,4 +1,4 @@
-package com.jlinfo.admin.user.facade;
+package com.jlinfo.admin.service.facade;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.jlinfo.admin.model.User;
