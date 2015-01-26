@@ -15,7 +15,7 @@
  */
 package com.jlinfo.admin.demo.dao;
 
-import com.jlinfo.admin.user.User;
+import com.jlinfo.admin.model.User;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

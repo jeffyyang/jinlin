@@ -18,7 +18,7 @@ package com.jlinfo.admin.service;
 import com.jlinfo.admin.model.User;
 
 /**
- * @author lishen
+ * @author JeffyYang
  */
 public interface UserService {
 	

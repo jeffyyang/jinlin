@@ -17,11 +17,11 @@ package com.jlinfo.admin.user;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.jlinfo.admin.user.User;
-import com.jlinfo.admin.user.UserService;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.UserService;
 
 /**
- * @author lishen
+ * @author JeffyYang
  */
 public class UserServiceImpl implements UserService {
 
@@ -36,4 +36,18 @@ public class UserServiceImpl implements UserService {
 //        System.out.println("Username is " + user.getName());
         return idGen.incrementAndGet();
     }
+
+
+	@Override
+	public Long loginUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Long logoutUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

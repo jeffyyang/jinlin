@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jlinfo.admin.demo.bid.*;
-import com.jlinfo.admin.user.User;
-import com.jlinfo.admin.user.facade.AnotherUserRestService;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.facade.AnotherUserRestService;
 
 public class DemoAction {
 

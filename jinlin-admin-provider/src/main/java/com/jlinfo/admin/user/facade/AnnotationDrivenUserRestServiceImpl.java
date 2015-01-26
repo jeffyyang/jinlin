@@ -17,10 +17,10 @@ package com.jlinfo.admin.user.facade;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
-import com.jlinfo.admin.user.User;
-import com.jlinfo.admin.user.UserService;
-import com.jlinfo.admin.user.facade.RegistrationResult;
-import com.jlinfo.admin.user.facade.UserRestService;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.UserService;
+import com.jlinfo.admin.service.facade.RegistrationResult;
+import com.jlinfo.admin.service.facade.UserRestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

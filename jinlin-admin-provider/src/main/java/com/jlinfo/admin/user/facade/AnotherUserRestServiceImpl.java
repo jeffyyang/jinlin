@@ -15,10 +15,10 @@
  */
 package com.jlinfo.admin.user.facade;
 
-import com.jlinfo.admin.user.User;
-import com.jlinfo.admin.user.UserService;
-import com.jlinfo.admin.user.facade.AnotherUserRestService;
-import com.jlinfo.admin.user.facade.RegistrationResult;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.UserService;
+import com.jlinfo.admin.service.facade.AnotherUserRestService;
+import com.jlinfo.admin.service.facade.RegistrationResult;
 
 /**
  * @author lishen

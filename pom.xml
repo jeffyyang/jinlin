@@ -30,6 +30,7 @@
 	</organization>	
 	<modules>
 		<module>jinlin-admin-api</module>
+		<module>jinlin-admin-dao</module>
 		<module>jinlin-admin-provider</module>
 		<module>jinlin-admin-consumer</module>
 	</modules>
@@ -94,6 +95,10 @@
 		<guice_version>3.0</guice_version>
 		<cglib_version>2.2</cglib_version>
 		<webx_version>3.0.8</webx_version>
+		<mysql-connector_version>5.1.6</mysql-connector_version>
+		<druid_version>1.0.12</druid_version>
+		<mybatis_version>3.2.8</mybatis_version>
+		<mybatis-spring_version>1.2.2</mybatis-spring_version>
 		<!-- Log libs -->
 		<slf4j_version>1.6.2</slf4j_version>
 		<jcl_version>1.1</jcl_version>
@@ -252,6 +257,26 @@
 				<artifactId>jetty</artifactId>
 				<version>${jetty_version}</version>
 			</dependency>
+	        <dependency>
+	            <groupId>com.alibaba</groupId>
+	            <artifactId>druid</artifactId>
+	            <version>${druid_version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>mysql</groupId>
+	            <artifactId>mysql-connector-java</artifactId>
+	            <version>${mysql-connector_version}</version>
+	        </dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis_version}</version>
+			</dependency>	        
+	        <dependency>
+	            <groupId>org.mybatis</groupId>
+	            <artifactId>mybatis-spring</artifactId>
+	            <version>${mybatis-spring_version}</version>
+	        </dependency>    	        	           			
 			<dependency>
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
