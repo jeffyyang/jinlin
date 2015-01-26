@@ -15,7 +15,7 @@
  */
 package com.jlinfo.admin.user.facade;
 
-import com.jlinfo.admin.user.User;
+import com.jlinfo.admin.model.User;
 
 /**
  * This interface acts as some kind of service broker for the original UserService

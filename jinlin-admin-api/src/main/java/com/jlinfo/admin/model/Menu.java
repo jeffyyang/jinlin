@@ -1,4 +1,4 @@
-package com.jlinfo.admin.menu;
+package com.jlinfo.admin.model;
 
 import java.io.Serializable;
 

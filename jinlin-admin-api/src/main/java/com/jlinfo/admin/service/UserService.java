@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jlinfo.admin.user;
+package com.jlinfo.admin.service;
+
+import com.jlinfo.admin.model.User;
 
 /**
  * @author lishen

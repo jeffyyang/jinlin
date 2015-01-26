@@ -1,11 +1,11 @@
-package com.jlinfo.admin.action;
+package com.jlinfo.admin.model;
 
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Role implements Serializable {
+public class Action implements Serializable {
 
 	/**
 	 * 

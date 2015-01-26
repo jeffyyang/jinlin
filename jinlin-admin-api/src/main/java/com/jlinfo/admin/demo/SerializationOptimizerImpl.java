@@ -22,7 +22,7 @@ import com.jlinfo.admin.demo.bid.Device;
 import com.jlinfo.admin.demo.bid.Geo;
 import com.jlinfo.admin.demo.bid.Impression;
 import com.jlinfo.admin.demo.bid.SeatBid;
-import com.jlinfo.admin.user.User;
+import com.jlinfo.admin.model.User;
 
 import java.util.Collection;
 import java.util.LinkedList;

@@ -1,7 +1,7 @@
 package com.jlinfo.admin.user.facade;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
-import com.jlinfo.admin.user.User;
+import com.jlinfo.admin.model.User;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
