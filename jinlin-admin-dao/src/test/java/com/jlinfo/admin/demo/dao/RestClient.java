@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alibaba.dubbo.demo.consumer;
+package com.jlinfo.admin.demo.dao;
 
 import com.jlinfo.admin.user.User;
 
