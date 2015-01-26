@@ -1,2 +1,13 @@
 
 jinlin-admin-api/.project
+/.project
+/jinlin-admin-provider/.settings
+/jinlin-admin-provider/.classpath
+/jinlin-admin-provider/.project
+/jinlin-admin-consumer/.settings
+/jinlin-admin-consumer/.classpath
+/jinlin-admin-consumer/.project
+/jinlin-admin-api/.settings
+/jinlin-admin-api/.classpath
+/jinlin-admin-api/.gitignore
+/.settings
