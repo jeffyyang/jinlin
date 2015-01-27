@@ -12,6 +12,7 @@ public class Action implements Serializable {
 	 */
 	private static final long serialVersionUID = -3714952917220656535L;
 	private int id;
+	private int parentId;
 	private String name;
 	private String code;
 	private String desc;
@@ -22,6 +23,14 @@ public class Action implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+		
+	}
+	public int getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(int parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getName() {
