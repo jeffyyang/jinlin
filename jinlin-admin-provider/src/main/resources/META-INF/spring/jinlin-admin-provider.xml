@@ -45,7 +45,7 @@
     <!-- use tjws server -->
     <!--<dubbo:protocol name="rest" port="8888" server="tjws" contextpath="services"/>-->
 
-    <!-- use tomcat server -->
+    <!-- default use  jetty server -->
     <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services"
                     extension="com.jlinfo.admin.extension.TraceInterceptor,
                     com.jlinfo.admin.extension.TraceFilter,

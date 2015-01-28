@@ -15,7 +15,9 @@
  */
 package com.jlinfo.admin.demo.provider;
 
-import com.alibaba.dubbo.config.ProtocolConfig;
+/**
+ * http://docs.spring.io/spring/docs/current/spring-framework-reference/html/testing.html#testcontext-framework
+ */
 
 public class DemoProvider {
 

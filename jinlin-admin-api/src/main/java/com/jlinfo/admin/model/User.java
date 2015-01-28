@@ -33,7 +33,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = -8463894109605838093L;
 
 	@JsonProperty("userid")
-    private int id;
+    private Long id;
 
     @JsonProperty("username")
     private String name;
@@ -48,10 +48,10 @@ public class User implements Serializable {
     private String mobile;
    
     @JsonProperty("salt")
-    private int salt;    
+    private String salt;    
    
     @JsonProperty("password")
-    private int password;        
+    private String password;        
     
     @JsonProperty("avatar")
     private String avatar;
@@ -61,16 +61,16 @@ public class User implements Serializable {
     
     public User(){}
 
-    public User(int id, String name) {
+    public User(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -116,19 +116,20 @@ public class User implements Serializable {
 		this.avatar = avatar;
 	}
 
-	public int getSalt() {
+
+	public String getSalt() {
 		return salt;
 	}
 
-	public void setSalt(int salt) {
+	public void setSalt(String salt) {
 		this.salt = salt;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
