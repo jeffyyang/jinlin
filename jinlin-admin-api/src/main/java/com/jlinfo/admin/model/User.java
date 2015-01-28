@@ -40,9 +40,6 @@ public class User implements Serializable {
     
     @JsonProperty("email")
     private String email;
-
-    @JsonProperty("sex")
-    private int sex;
     
     @JsonProperty("mobile")
     private String mobile;
@@ -91,15 +88,7 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public int getSex() {
-		return sex;
-	}
-
-	public void setSex(int sex) {
-		this.sex = sex;
-	}
-
+	
 	public String getMobile() {
 		return mobile;
 	}
