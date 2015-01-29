@@ -34,10 +34,11 @@ public class UserMapperDAOTest extends BaseDAOTestCase {
 	public void init() {
 	}
 
+	@Ignore("Test is ignored as a demonstration")
 	@Test
 	public void insert() {
 		
-		User user = new User(1l, "testuser");
+		User user = new User(2l, "testuser");
 		user.setEmail("test@sina.com");
 		user.setSalt("");
 		user.setPassword("password");
@@ -51,6 +52,8 @@ public class UserMapperDAOTest extends BaseDAOTestCase {
 	
 	@Test
 	public void getList() {
+		
+		System.out.println(System.currentTimeMillis()/1000l);
 		try {
 			List<User> users = userMapper.selectAllUser();
 			assertNotNull("should not be null", users);

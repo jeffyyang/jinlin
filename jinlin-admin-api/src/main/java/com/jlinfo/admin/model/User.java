@@ -55,6 +55,13 @@ public class User implements Serializable {
     
     @JsonProperty("status")
     private int status;    
+
+    @JsonProperty("update_time")
+    private int updateTime;    
+    
+    @JsonProperty("create_time")
+    private int createTime;    
+    
     
     public User(){}
 
@@ -128,6 +135,24 @@ public class User implements Serializable {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	
+	
+	public int getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(int updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public int getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(int createTime) {
+		this.createTime = createTime;
 	}
 
 	@Override

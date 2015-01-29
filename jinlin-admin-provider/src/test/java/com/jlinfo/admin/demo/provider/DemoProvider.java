@@ -32,7 +32,7 @@ public class DemoProvider {
 //                ProtocolConfig.destroyAll();
 //            }
 //        }).start();
-        com.alibaba.dubbo.container.Main.main(args);
+		com.alibaba.dubbo.container.Main.main(args);
     }
 
 }
