@@ -69,5 +69,4 @@ public abstract class ResponseResult implements Serializable {
 	public void setDatas(Object datas) {
 		this.datas = datas;
 	}
-
 }

@@ -46,16 +46,24 @@
     <!--<dubbo:protocol name="rest" port="8888" server="tjws" contextpath="services"/>-->
 
     <!-- default use  jetty server -->
-    <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services"
+	<dubbo:protocol name="rest" port="8888" threads="500" contextpath="services"
                     extension="com.jlinfo.admin.extension.TraceInterceptor,
                     com.jlinfo.admin.extension.TraceFilter,
                     com.jlinfo.admin.extension.ClientTraceFilter,
                     com.jlinfo.admin.extension.DynamicTraceBinding,
                     com.jlinfo.admin.extension.CustomExceptionMapper,
-                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>                    
+                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>                 
 
     <!-- use the external tomcat or other server with the servlet approach; the port and contextpath must be exactly the same as those in external server -->
-    <!--<dubbo:protocol name="rest" port="8888" contextpath="services" server="servlet"/>-->
+    <!--<dubbo:protocol name="rest" port="6080" contextpath="services" server="servlet"/>-->
+
+<!--     <dubbo:protocol name="rest" port="6080" threads="500" server="servlet" contextpath="services"
+                    extension="com.jlinfo.admin.extension.TraceInterceptor,
+                    com.jlinfo.admin.extension.TraceFilter,
+                    com.jlinfo.admin.extension.ClientTraceFilter,
+                    com.jlinfo.admin.extension.DynamicTraceBinding,
+                    com.jlinfo.admin.extension.CustomExceptionMapper,
+                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>  -->                   
 
     <dubbo:protocol name="http" port="8889"/>
     <dubbo:protocol name="hessian" port="8890"/>
@@ -64,10 +72,13 @@
 	<dubbo:service interface="com.jlinfo.admin.demo.bid.BidService" ref="bidService"  protocol="dubbo"/>
 
     <!-- we add the group property since there's another annotation-configured service impl: com.alibaba.dubbo.demo.user.facade.AnnotationDrivenUserRestServiceImpl -->
-    <dubbo:service interface="com.jlinfo.admin.user.UserService" ref="userService"  protocol="dubbo" group="xmlConfig"/>
+    <dubbo:service interface="com.jlinfo.admin.service.UserService" ref="userService"  protocol="dubbo" group="xmlConfig"/>
 
-	<dubbo:service interface="com.jlinfo.admin.user.facade.UserRestService" ref="userRestService"  protocol="rest"/>
-	<dubbo:service interface="com.jlinfo.admin.user.facade.AnotherUserRestService" ref="anotherUserRestService"  protocol="rest"  timeout="2000" connections="100"/>
+	<dubbo:service interface="com.jlinfo.admin.service.facade.UserRestService" ref="userRestService"  protocol="rest"/>
+	
+	<dubbo:service interface="com.jlinfo.admin.service.facade.AnotherUserRestService" ref="anotherUserRestService"  protocol="rest"  
+	timeout="2000" connections="100"/>
+	
     <bean id="bidService" class="com.jlinfo.admin.demo.bid.BidServiceImpl" />
 
     <bean id="userService" class="com.jlinfo.admin.user.UserServiceImpl" />

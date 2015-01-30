@@ -15,8 +15,12 @@
  */
 package com.jlinfo.admin.user;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jlinfo.admin.dao.UserMapper;
 import com.jlinfo.admin.model.User;
 import com.jlinfo.admin.service.UserService;
 
@@ -27,17 +31,26 @@ public class UserServiceImpl implements UserService {
 
     private final AtomicLong idGen = new AtomicLong();
 
-    public User getUser(Long id) {
-        return new User(id, "dang" + id);
-    }
-
-
+	@Autowired
+	private UserMapper userMapper;
+	
     public Long registerUser(User user) {
-//        System.out.println("Username is " + user.getName());
-        return idGen.incrementAndGet();
+    	user.setId(idGen.incrementAndGet());
+    	userMapper.insertUser(user);
+        return user.getId();
     }
-
-
+    
+    public User getUser(Long id) {
+    	User user = userMapper.selectUser(id);
+        return user;
+    }
+    
+	@Override
+	public List<User> getUsers() {
+		List<User> users = userMapper.selectAllUser();
+		return users;
+	}
+	
 	@Override
 	public Long loginUser(User user) {
 		// TODO Auto-generated method stub
@@ -50,4 +63,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 }

@@ -13,6 +13,11 @@ public interface UserMapper {
 
 	@Select({
 			"SELECT user_id AS id, user_name AS name, email, mobile, ec_salt AS salt, password, status ",
+			"FROM user WHERE user_id =#{userId}" })
+	public User selectUser(@Param("userId") Long userId);
+
+	@Select({
+			"SELECT user_id AS id, user_name AS name, email, mobile, ec_salt AS salt, password, status ",
 			"FROM user WHERE 1" })
 	public List<User> selectAllUser();
 

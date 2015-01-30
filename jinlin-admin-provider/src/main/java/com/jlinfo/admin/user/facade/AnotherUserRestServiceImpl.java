@@ -21,7 +21,7 @@ import com.jlinfo.admin.service.facade.AnotherUserRestService;
 import com.jlinfo.admin.service.facade.RegistrationResult;
 
 /**
- * @author lishen
+ * @author JeffyYang
  */
 public class AnotherUserRestServiceImpl implements AnotherUserRestService {
 

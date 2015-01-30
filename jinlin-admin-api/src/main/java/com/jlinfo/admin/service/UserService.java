@@ -15,6 +15,8 @@
  */
 package com.jlinfo.admin.service;
 
+import java.util.List;
+
 import com.jlinfo.admin.model.User;
 
 /**
@@ -22,9 +24,11 @@ import com.jlinfo.admin.model.User;
  */
 public interface UserService {
 	
-    User getUser(Long id);
-
     Long registerUser(User user);
+    
+    User getUser(Long id);
+    
+    List<User> getUsers();
 
     Long loginUser(User user);    
  

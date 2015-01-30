@@ -19,7 +19,7 @@ package com.jlinfo.admin.demo.provider;
  * http://docs.spring.io/spring/docs/current/spring-framework-reference/html/testing.html#testcontext-framework
  */
 
-public class DemoProvider {
+public class JinlinAdminProvider {
 
 	public static void main(String[] args) {
 //        new Thread(new Runnable() {

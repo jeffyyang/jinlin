@@ -51,9 +51,19 @@ public class UserMapperDAOTest extends BaseDAOTestCase {
 	}
 	
 	@Test
-	public void getList() {
+	public void getUser() {
 		
-		System.out.println(System.currentTimeMillis()/1000l);
+		try {
+			User user = userMapper.selectUser(1l);
+			assertNotNull("should not be null", user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void getUserList() {
+		
 		try {
 			List<User> users = userMapper.selectAllUser();
 			assertNotNull("should not be null", users);
