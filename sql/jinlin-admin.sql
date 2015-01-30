@@ -53,6 +53,18 @@ CREATE TABLE `admin_action` (
   KEY `parent_id` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=142 DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+  `role_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(60) NOT NULL DEFAULT '',
+  `action_list` text NOT NULL,
+  `role_describe` text,
+  `nav_list` text COMMENT '导航标签',
+  `is_built-in` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否系统内置 1 内置 0 非内置',
+  PRIMARY KEY (`role_id`),
+  KEY `role_name` (`role_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `nav`;
 CREATE TABLE `nav` (
   `id` mediumint(8) NOT NULL AUTO_INCREMENT,
