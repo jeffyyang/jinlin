@@ -54,7 +54,7 @@ public class UserMapperDAOTest extends BaseDAOTestCase {
 	public void getUser() {
 		
 		try {
-			User user = userMapper.selectUser(1l);
+			User user = userMapper.selectUserById(1l);
 			assertNotNull("should not be null", user);
 		} catch (Exception e) {
 			e.printStackTrace();

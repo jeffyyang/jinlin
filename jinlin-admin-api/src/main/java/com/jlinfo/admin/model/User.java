@@ -32,10 +32,10 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = -8463894109605838093L;
 
-	@JsonProperty("userid")
+	@JsonProperty("user_id")
     private Long id;
 
-    @JsonProperty("username")
+    @JsonProperty("user_name")
     private String name;
     
     @JsonProperty("email")
@@ -61,7 +61,6 @@ public class User implements Serializable {
     
     @JsonProperty("create_time")
     private long createTime;    
-    
     
     public User(){}
 

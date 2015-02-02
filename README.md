@@ -16,4 +16,4 @@ mvn clean package -Dmaven.test.skip=true
 </plugin>
 
 http://localhost:8888/services/users/register
-{"username":"dang","email":"jeffyyang@sina.com","email":"jeffyyang@sina.com","mobile":"13376069091","password":"123456"}
+{"user_name":"jeffyyang","email":"jeffyyang@sina.com","email":"jeffyyang@sina.com","mobile":"13376069091","password":"123456"}

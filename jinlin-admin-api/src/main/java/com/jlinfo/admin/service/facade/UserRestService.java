@@ -34,5 +34,5 @@ public interface UserRestService {
      */
     User getUser(Long id/*, HttpServletRequest request*/);
 
-    RegistrationResult registerUser(User user);
+    ResponseResult registerUser(User user);
 }

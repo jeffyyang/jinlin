@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
     }
     
     public User getUser(Long id) {
-    	User user = userMapper.selectUser(id);
+    	User user = userMapper.selectUserById(id);
         return user;
     }
     

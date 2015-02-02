@@ -15,15 +15,6 @@
  */
 package com.jlinfo.admin.user.facade;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
-import com.jlinfo.admin.model.User;
-import com.jlinfo.admin.service.UserService;
-import com.jlinfo.admin.service.facade.RegistrationResult;
-import com.jlinfo.admin.service.facade.UserRestService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -31,6 +22,15 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.UserService;
+import com.jlinfo.admin.service.facade.ResponseResult;
+import com.jlinfo.admin.service.facade.UserRestService;
 
 /**
  * @author lishen
@@ -61,7 +61,10 @@ public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
 
     @POST
     @Path("register")
-    public RegistrationResult registerUser(User user) {
-        return new RegistrationResult(userService.registerUser(user));
+    public ResponseResult registerUser(User user) {
+    	ResponseResult resp = new ResponseResult();
+    	resp.setResultMsg("注册成功！");
+    	resp.setDatas("");
+        return resp;//new RegistrationResult(userService.registerUser(user));
     }
 }

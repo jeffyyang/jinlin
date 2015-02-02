@@ -27,14 +27,14 @@ import java.io.Serializable;
  * @author JeffyYang
  */
 @XmlRootElement
-public abstract class ResponseResult implements Serializable {
+public class ResponseResult implements Serializable {
 
 	private static final long serialVersionUID = 1785179787553883215L;
 	
 	@JsonProperty("result_code")
 	private int resultCode;
 	
-	@JsonProperty("result_code")
+	@JsonProperty("result_msg")
 	private String resultMsg; 
 
 	@JsonProperty("datas")

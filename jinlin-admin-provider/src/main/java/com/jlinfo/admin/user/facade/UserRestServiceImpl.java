@@ -19,6 +19,7 @@ import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.jlinfo.admin.model.User;
 import com.jlinfo.admin.service.UserService;
 import com.jlinfo.admin.service.facade.RegistrationResult;
+import com.jlinfo.admin.service.facade.ResponseResult;
 import com.jlinfo.admin.service.facade.UserRestService;
 
 import javax.ws.rs.Consumes;
@@ -56,7 +57,10 @@ public class UserRestServiceImpl implements UserRestService {
 
     @POST
     @Path("register")
-    public RegistrationResult registerUser(User user) {
-        return new RegistrationResult(userService.registerUser(user));
+    public ResponseResult registerUser(User user) {
+    	ResponseResult resp = new ResponseResult();
+    	resp.setResultMsg("注册成功！");
+    	resp.setDatas("");
+        return resp;//new RegistrationResult(userService.registerUser(user));
     }
 }
