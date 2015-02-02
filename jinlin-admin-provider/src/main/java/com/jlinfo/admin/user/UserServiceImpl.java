@@ -35,7 +35,11 @@ public class UserServiceImpl implements UserService {
 	private UserMapper userMapper;
 	
     public Long registerUser(User user) {
+    	long now = System.currentTimeMillis()/1000;
     	user.setId(idGen.incrementAndGet());
+    	user.setSalt("salt");
+    	user.setCreateTime(now);
+
     	userMapper.insertUser(user);
         return user.getId();
     }

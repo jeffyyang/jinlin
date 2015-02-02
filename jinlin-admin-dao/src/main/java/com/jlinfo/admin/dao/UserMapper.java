@@ -22,13 +22,12 @@ public interface UserMapper {
 	public List<User> selectAllUser();
 
 	@Insert({
-			"INSERT INTO user(user_id, user_name, email, mobile, salt, password,add_ )",
-			"VALUES(#{id}, #{name}, #{email}, #{mobile}, #{salt}, #{password})" })
+			"INSERT INTO user(user_id, user_name, email, mobile, salt, password, add_time )",
+			"VALUES(#{id}, #{name}, #{email}, #{mobile}, #{salt}, #{password}, #{createTime})" })
 	void insertUser(User user);
 
-	@Update({ "UPDATE user SET is_separate=#{isSeparate} ",
-			"WHERE order_sn = #{orderSN}" })
-	void updateUser(@Param("orderSN") String orderSN,
-			@Param("isSeparate") int isSeparate);
+	@Update({ "UPDATE user SET status = #{status}",
+			"WHERE user_id = #{userId}" })
+	void updateUser(@Param("userId") Long userId ,@Param("status") int status);
 
 }

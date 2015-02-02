@@ -57,10 +57,10 @@ public class User implements Serializable {
     private int status;    
 
     @JsonProperty("update_time")
-    private int updateTime;    
+    private long updateTime;    
     
     @JsonProperty("create_time")
-    private int createTime;    
+    private long createTime;    
     
     
     public User(){}
@@ -137,21 +137,19 @@ public class User implements Serializable {
 		this.status = status;
 	}
 
-	
-	
-	public int getUpdateTime() {
+	public long getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setUpdateTime(int updateTime) {
+	public void setUpdateTime(long updateTime) {
 		this.updateTime = updateTime;
 	}
 
-	public int getCreateTime() {
+	public long getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(int createTime) {
+	public void setCreateTime(long createTime) {
 		this.createTime = createTime;
 	}
 
