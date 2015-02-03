@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jlinfo.admin.dao.UserMapper;
+import com.jlinfo.admin.dao.UserDao;
 import com.jlinfo.admin.model.User;
 import com.jlinfo.admin.service.UserService;
 
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     private final AtomicLong idGen = new AtomicLong();
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserDao userDao;
 	
     public Long registerUser(User user) {
     	long now = System.currentTimeMillis()/1000;
@@ -40,18 +40,18 @@ public class UserServiceImpl implements UserService {
     	user.setSalt("salt");
     	user.setCreateTime(now);
 
-    	userMapper.insertUser(user);
+    	userDao.insertUser(user);
         return user.getId();
     }
     
     public User getUser(Long id) {
-    	User user = userMapper.selectUserById(id);
+    	User user = userDao.selectUserById(id);
         return user;
     }
     
 	@Override
 	public List<User> getUsers() {
-		List<User> users = userMapper.selectAllUser();
+		List<User> users = userDao.selectAllUser();
 		return users;
 	}
 	

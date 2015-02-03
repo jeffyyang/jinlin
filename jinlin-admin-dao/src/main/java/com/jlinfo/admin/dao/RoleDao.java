@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.jlinfo.admin.model.User;
 
-public interface RoleMapper {
+public interface RoleDao {
 
 	@Select({
 			"SELECT user_id AS id, user_name AS name, email, mobile, ec_salt AS salt, password, status ",

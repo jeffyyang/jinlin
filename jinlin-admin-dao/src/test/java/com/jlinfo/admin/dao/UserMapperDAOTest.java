@@ -28,7 +28,7 @@ public class UserMapperDAOTest extends BaseDAOTestCase {
 	}
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserDao userMapper;
 
 	@Before
 	public void init() {
