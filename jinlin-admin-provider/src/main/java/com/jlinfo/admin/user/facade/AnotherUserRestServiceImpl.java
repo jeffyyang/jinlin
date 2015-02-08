@@ -32,7 +32,7 @@ public class AnotherUserRestServiceImpl implements AnotherUserRestService {
     }
 
     public User getUser(Long id) {
-        return userService.getUser(id);
+        return userService.getUserById(id);
     }
 
     public RegistrationResult registerUser(User user) {

@@ -15,6 +15,7 @@
  */
 package com.jlinfo.admin.service.facade;
 
+import com.jlinfo.admin.form.LoginForm;
 import com.jlinfo.admin.model.User;
 
 /**
@@ -36,8 +37,8 @@ public interface UserRestService {
 
     ResponseResult registerUser(User user);
     
-    ResponseResult login(User user);
+    ResponseResult login(LoginForm loginForm);
 
-    ResponseResult logout(User user);
+    ResponseResult logout(String userId, String sessionId);
     
 }

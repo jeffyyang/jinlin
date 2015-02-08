@@ -24,20 +24,22 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import com.jlinfo.admin.form.LoginForm;
 import com.jlinfo.admin.model.User;
 import com.jlinfo.admin.service.UserService;
 import com.jlinfo.admin.service.facade.ResponseResult;
 import com.jlinfo.admin.service.facade.UserRestService;
 
+
 /**
- * @author lishen
+ * @author JeffyYang
  */
 @Path("users")
 @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 @Produces({ContentType.APPLICATION_JSON_UTF_8, ContentType.TEXT_XML_UTF_8})
 public class UserRestServiceImpl implements UserRestService {
 
-//    private static final Logger logger = LoggerFactory.getLogger(UserRestServiceImpl.class);
+	// private static final Logger logger = LoggerFactory.getLogger(UserRestServiceImpl.class);
 
     private UserService userService;
 
@@ -52,7 +54,7 @@ public class UserRestServiceImpl implements UserRestService {
 //        System.out.println("Client address from @Context injection: " + (request != null ? request.getRemoteAddr() : ""));
 //        System.out.println("Client address from RpcContext: " + RpcContext.getContext().getRemoteAddressString());
     	ResponseResult resp = new ResponseResult();
-    	User user = userService.getUser(id);
+    	User user = userService.getUserById(id);
     	resp.setData(user);
         return resp;
     }
@@ -63,17 +65,35 @@ public class UserRestServiceImpl implements UserRestService {
     	ResponseResult resp = new ResponseResult();
     	userService.createUser(user);
     	resp.setResultMsg("注册成功！");
-        return resp;//new RegistrationResult(userService.registerUser(user));
+        return resp;
     }
 
-	@Override
-	public ResponseResult login(User user) {
-		// TODO Auto-generated method stub
-		return null;
+    @POST
+    @Path("login")  
+	public ResponseResult login(LoginForm loginForm) {
+    	
+    	System.out.println("loginName:" + loginForm.getLoginName() + " password:" + loginForm.getPassword());
+    	ResponseResult resp = new ResponseResult();
+    	User user = userService.getUserByLoginName(loginForm.getLoginName());
+    	
+    	if(user == null){
+    		resp.setResultCode(1000);
+    		resp.setResultMsg("没有这个用户！");
+    	}else{
+    		
+    		if(loginForm.getPassword().equals(user.getPassword())){
+    			resp.setResultMsg("登录成功！");
+    			resp.setData(user);
+    		}else{
+    			resp.setResultCode(1001);
+    			resp.setResultMsg("用户名或者密码错误！");
+    		}
+    	}
+		return resp;
 	}
 
 	@Override
-	public ResponseResult logout(User user) {
+	public ResponseResult logout(String userId, String sessionId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

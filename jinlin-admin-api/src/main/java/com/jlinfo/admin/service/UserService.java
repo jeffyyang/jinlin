@@ -23,10 +23,18 @@ import com.jlinfo.admin.model.User;
  * @author JeffyYang
  */
 public interface UserService {
+
+	Long createUser(User user);
+
+	User getUserById(Long id);
+
+	User getUserByName(String userName);
+
+	User getUserByEMail(String email);
+
+	User getUserByMobile(String mobile);
 	
-    Long createUser(User user);
-    
-    User getUser(Long id);
-    
-    List<User> getUsers();
+	User getUserByLoginName(String loginName);
+
+	List<User> getUsers();
 }

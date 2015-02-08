@@ -43,14 +43,39 @@ public class UserServiceImpl implements UserService {
         return user.getId();
     }
     
-    public User getUser(Long id) {
+	public List<User> getUsers() {
+		List<User> users = userDao.selectAllUser();
+		return users;
+	}
+
+    public User getUserById(Long id) {
     	User user = userDao.selectUserById(id);
         return user;
     }
     
-	public List<User> getUsers() {
-		List<User> users = userDao.selectAllUser();
-		return users;
+	@Override
+	public User getUserByName(String userName) {
+    	User user = userDao.selectUserByName(userName);
+        return user;
+	}
+
+	@Override
+	public User getUserByEMail(String email) {
+    	User user = userDao.selectUserByEMail(email);
+        return user;
+	}
+
+	@Override
+	public User getUserByMobile(String mobile) {
+    	User user = userDao.selectUserByMobile(mobile);
+        return user;
+	}
+
+	@Override
+	public User getUserByLoginName(String loginName) {
+		// TODO Auto-generated method stub
+		User user = userDao.selectUserByEMail(loginName);
+		return user;
 	}
 
 }

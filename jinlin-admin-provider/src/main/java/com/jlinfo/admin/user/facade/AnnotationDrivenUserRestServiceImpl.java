@@ -27,6 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import com.jlinfo.admin.form.LoginForm;
 import com.jlinfo.admin.model.User;
 import com.jlinfo.admin.service.UserService;
 import com.jlinfo.admin.service.facade.ResponseResult;
@@ -41,7 +42,7 @@ import com.jlinfo.admin.service.facade.UserRestService;
 @Produces({ContentType.APPLICATION_JSON_UTF_8, ContentType.TEXT_XML_UTF_8})
 public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
 
-//    private static final Logger logger = LoggerFactory.getLogger(UserRestServiceImpl.class);
+	// private static final Logger logger = LoggerFactory.getLogger(AnnotationDrivenUserRestServiceImpl.class);
 
     @Autowired
     private UserService userService;
@@ -58,7 +59,7 @@ public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
 //        System.out.println("Client address from RpcContext: " + RpcContext.getContext().getRemoteAddressString());
   
     	ResponseResult resp = new ResponseResult();
-    	User user = userService.getUser(id);
+    	User user = userService.getUserById(id);
     	resp.setData(user);
         return resp;
     }
@@ -70,4 +71,17 @@ public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
     	resp.setResultMsg("注册成功！");
         return resp;//new RegistrationResult(userService.registerUser(user));
     }
+
+    @POST
+    @Path("login")
+	public ResponseResult login(LoginForm loginForm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult logout(String userId, String sessionId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
