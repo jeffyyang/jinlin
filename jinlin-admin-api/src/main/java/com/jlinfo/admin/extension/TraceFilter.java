@@ -35,5 +35,11 @@ public class TraceFilter implements ContainerRequestFilter, ContainerResponseFil
 
     public void filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) throws IOException {
         System.out.println("Response filter invoked");
+        
+        // Modified by Jeffy Yang
+    	containerResponseContext.getHeaders().add("Access-Control-Allow-Headers", "Content-Type");
+        containerResponseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
+
+    	
     }
 }

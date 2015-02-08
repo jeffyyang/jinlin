@@ -15,13 +15,6 @@
  */
 package com.jlinfo.admin.user.facade;
 
-import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
-import com.jlinfo.admin.model.User;
-import com.jlinfo.admin.service.UserService;
-import com.jlinfo.admin.service.facade.RegistrationResult;
-import com.jlinfo.admin.service.facade.ResponseResult;
-import com.jlinfo.admin.service.facade.UserRestService;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -29,6 +22,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import com.jlinfo.admin.model.User;
+import com.jlinfo.admin.service.UserService;
+import com.jlinfo.admin.service.facade.ResponseResult;
+import com.jlinfo.admin.service.facade.UserRestService;
 
 /**
  * @author lishen
@@ -48,19 +47,34 @@ public class UserRestServiceImpl implements UserRestService {
 
     @GET
     @Path("{id : \\d+}")
-    public User getUser(@PathParam("id") Long id/*, @Context HttpServletRequest request*/) {
+    public ResponseResult getUser(@PathParam("id") Long id/*, @Context HttpServletRequest request*/) {
         // test context injection
 //        System.out.println("Client address from @Context injection: " + (request != null ? request.getRemoteAddr() : ""));
 //        System.out.println("Client address from RpcContext: " + RpcContext.getContext().getRemoteAddressString());
-        return userService.getUser(id);
+    	ResponseResult resp = new ResponseResult();
+    	User user = userService.getUser(id);
+    	resp.setData(user);
+        return resp;
     }
 
     @POST
     @Path("register")
     public ResponseResult registerUser(User user) {
     	ResponseResult resp = new ResponseResult();
+    	userService.createUser(user);
     	resp.setResultMsg("注册成功！");
-    	resp.setDatas("");
         return resp;//new RegistrationResult(userService.registerUser(user));
     }
+
+	@Override
+	public ResponseResult login(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult logout(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

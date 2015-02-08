@@ -52,11 +52,15 @@ public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
 
     @GET
     @Path("{id : \\d+}")
-    public User getUser(@PathParam("id") Long id/*, @Context HttpServletRequest request*/) {
+    public ResponseResult getUser(@PathParam("id") Long id/*, @Context HttpServletRequest request*/) {
         // test context injection
 //        System.out.println("Client address from @Context injection: " + (request != null ? request.getRemoteAddr() : ""));
 //        System.out.println("Client address from RpcContext: " + RpcContext.getContext().getRemoteAddressString());
-        return userService.getUser(id);
+  
+    	ResponseResult resp = new ResponseResult();
+    	User user = userService.getUser(id);
+    	resp.setData(user);
+        return resp;
     }
 
     @POST
@@ -64,7 +68,6 @@ public class AnnotationDrivenUserRestServiceImpl implements UserRestService {
     public ResponseResult registerUser(User user) {
     	ResponseResult resp = new ResponseResult();
     	resp.setResultMsg("注册成功！");
-    	resp.setDatas("");
         return resp;//new RegistrationResult(userService.registerUser(user));
     }
 }

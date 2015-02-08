@@ -36,6 +36,6 @@ public class AnotherUserRestServiceImpl implements AnotherUserRestService {
     }
 
     public RegistrationResult registerUser(User user) {
-        return new RegistrationResult(userService.registerUser(user));
+        return new RegistrationResult(userService.createUser(user));
     }
 }

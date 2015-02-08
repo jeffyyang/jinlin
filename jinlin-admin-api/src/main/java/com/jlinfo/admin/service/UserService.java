@@ -24,13 +24,9 @@ import com.jlinfo.admin.model.User;
  */
 public interface UserService {
 	
-    Long registerUser(User user);
+    Long createUser(User user);
     
     User getUser(Long id);
     
     List<User> getUsers();
-
-    Long loginUser(User user);    
- 
-    Long logoutUser(User user);        
 }

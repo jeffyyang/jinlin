@@ -34,12 +34,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 	
-    public Long registerUser(User user) {
+    public Long createUser(User user) {
     	long now = System.currentTimeMillis()/1000;
     	user.setId(idGen.incrementAndGet());
     	user.setSalt("salt");
     	user.setCreateTime(now);
-
     	userDao.insertUser(user);
         return user.getId();
     }
@@ -49,25 +48,9 @@ public class UserServiceImpl implements UserService {
         return user;
     }
     
-	@Override
 	public List<User> getUsers() {
 		List<User> users = userDao.selectAllUser();
 		return users;
 	}
-	
-	@Override
-	public Long loginUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Long logoutUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 
 }

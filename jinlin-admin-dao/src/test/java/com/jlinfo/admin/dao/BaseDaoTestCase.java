@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 @ContextConfiguration(locations={"classpath:/META-INF/spring/jinlin-admin-dao.xml"})
 @TransactionConfiguration(transactionManager="transactionManager",defaultRollback=true)
 @Transactional
-public class BaseDAOTestCase {
+public class BaseDaoTestCase {
  //本类作为基类，所有要用到的东西都在annotation里配置了。所以什么内容都不用写了。
 }

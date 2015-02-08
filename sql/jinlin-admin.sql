@@ -4,11 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : jinlin
 Source Server Version : 50610
 Source Host           : 61.154.127.132:3306
-Source Database       : wxshop
-
-Target Server Type    : MYSQL
-Target Server Version : 50610
-File Encoding         : 65001
+Source Database       : jinlin
 
 Date: 2015-01-28 16:43:55
 */
@@ -18,7 +14,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `admin_user`;
 CREATE TABLE `user` (
   `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_name` varchar(60) NOT NULL DEFAULT '',
@@ -31,7 +27,7 @@ CREATE TABLE `user` (
   `action_list` text ,
   `nav_list` text ,
   `lang_type` varchar(50) NOT NULL DEFAULT 'zh_CN',
-  `agency_id` smallint(5) unsigned NOT NULL,
+  `agency_id` smallint(5) unsigned NOT NULL DEFAULT '0',
   `todolist` longtext,
   `status` smallint(1) NOT NULL DEFAULT '0',
   `update_time` int(11) NOT NULL DEFAULT '0',

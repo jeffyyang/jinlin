@@ -32,7 +32,12 @@ public interface UserRestService {
     /**
      * the request object is just used to test jax-rs injection
      */
-    User getUser(Long id/*, HttpServletRequest request*/);
+	ResponseResult getUser(Long id);
 
     ResponseResult registerUser(User user);
+    
+    ResponseResult login(User user);
+
+    ResponseResult logout(User user);
+    
 }

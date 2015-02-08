@@ -37,13 +37,13 @@ public class ResponseResult implements Serializable {
 	@JsonProperty("result_msg")
 	private String resultMsg; 
 
-	@JsonProperty("datas")
-	private Object datas;
+	@JsonProperty("data")
+	private Object data;
 	
     public ResponseResult() {
-
     	this.resultCode = 0;
     	this.resultMsg = "";
+    	this.data = "";
     }
     
 	public int getResultCode() {
@@ -62,11 +62,12 @@ public class ResponseResult implements Serializable {
 		this.resultMsg = resultMsg;
 	}
 
-	public Object getDatas() {
-		return datas;
+	public Object getData() {
+		return data;
 	}
 
-	public void setDatas(Object datas) {
-		this.datas = datas;
+	public void setData(Object data) {
+		this.data = data;
 	}
+	
 }

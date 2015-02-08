@@ -3,6 +3,7 @@ package com.jlinfo.admin.dao;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -22,24 +23,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jlinfo.admin.model.User;
 
-public class UserMapperDAOTest extends BaseDAOTestCase {
+public class UserDaoTest extends BaseDaoTestCase {
 
-	public UserMapperDAOTest() {
+	public UserDaoTest() {
 	}
 
 	@Autowired
 	private UserDao userMapper;
 
+    private final AtomicLong idGen = new AtomicLong();
+
 	@Before
 	public void init() {
 	}
 
-	@Ignore("Test is ignored as a demonstration")
+	// @Ignore("Test is ignored as a demonstration")
 	@Test
 	public void insert() {
 		
-		User user = new User(2l, "testuser");
+		User user = new User(12l, "testuser");
 		user.setEmail("test@sina.com");
+		user.setMobile("13376069091");
 		user.setSalt("");
 		user.setPassword("password");
 		try {
